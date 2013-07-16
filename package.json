@@ -15,6 +15,7 @@
     "q": "0.9.6"
   },
   "scripts": {
+    "start": "mocha test/example-passing-tests.js",
     "test": "mocha"
   }
 }

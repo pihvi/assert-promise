@@ -3,14 +3,14 @@ var assertPromise = require('./../lib/assert-promise')
 var assert = require('assert')
 var Q = require('q')
 
+it('assert non promise', function(done) {
+  assertPromise.equal(3, 3).done(done)
+})
+
 it('basic failing promise', function(done) {
   Q(2).delay(50).then(function(two) {
     assert.equal(two, 3)
   }).done(done)
-})
-
-it('assert non promise', function(done) {
-  assertPromise.equal(3, 3).done(done)
 })
 
 it('assert failing promise', function(done) {
