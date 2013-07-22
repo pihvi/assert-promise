@@ -34,4 +34,17 @@ it('assert.oek passing promise', function(done) {
 
 it('assert passing mocha-as-promised', function() {
   return assertPromise.equal(Q(2).delay(50), 2)
+    .then(function() {
+      return assertPromise.notEqual(Q(3).delay(50), 2)
+    }).then(function() {
+      return assertPromise(Q(true).delay(50))
+    }).then(function() {
+      return assertPromise.deepEqual(Q({a: 1}).delay(50), {a: true})
+    }).then(function() {
+      return assertPromise.notDeepEqual(Q({a: 2}).delay(50), {a: true})
+    }).then(function() {
+      return assertPromise.strictEqual(Q(1).delay(50), 1)
+    }).then(function() {
+      return assertPromise.notStrictEqual(Q(true).delay(50), 1)
+    })
 })
