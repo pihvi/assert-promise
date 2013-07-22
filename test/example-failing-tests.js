@@ -25,11 +25,11 @@ it('assert failing promise with own assert function', function(done) {
   var alwaysFail = function(actual, expected, message) {
     assert(false, 'Failing anyway. Got ' + actual + ' and ' + expected + ' with message: ' + message)
   }
-  assertPromise.equal(Q(1).delay(50), true, 'this should fail', alwaysFail).done(done)
+  assertPromise.withFn(Q(1).delay(50), true, 'this should fail', alwaysFail).done(done)
 })
 
 it('assert failing promise with other assert function', function(done) {
-  assertPromise.equal(Q(1).delay(50), true, 'using strict, should fail', assert.strictEqual).done(done)
+  assertPromise.withFn(Q(1).delay(50), true, 'using strict, should fail', assert.strictEqual).done(done)
 })
 
 it('assert fail mocha-as-promised', function() {

@@ -10,9 +10,10 @@ it('basic passing promise', function(done) {
 })
 
 it('assert passing promise with own assert function', function(done) {
-  var alwaysPass = function() {
+  var assertOneLess = function(actual, expected, message) {
+    assert.equal(actual + 1, expected, message)
   }
-  assertPromise.equal(Q(2).delay(50), 3, 'this should pass', alwaysPass).done(done)
+  assertPromise.withFn(Q(2).delay(50), 3, 'this should pass', assertOneLess).done(done)
 })
 
 it('assert passing promise', function(done) {
