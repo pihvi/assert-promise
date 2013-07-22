@@ -45,5 +45,5 @@ it('fail assert mocha-as-promised', function() {
 })
 
 function promise(val) {
-  return Q(val).delay(50)
+  return Q(val).delay(10)
 }
