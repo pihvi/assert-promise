@@ -17,7 +17,7 @@ it('assert passing promise with own assert function', function(done) {
 })
 
 it('assert.equal passing promise', function(done) {
-  assertPromise.equal(Q(1).delay(50), true).done(done)
+  assertPromise.equal(Q(1).delay(50), 1).done(done)
 })
 
 it('assert.notEqual passing promise', function(done) {
@@ -28,7 +28,7 @@ it('assert.ok passing promise', function(done) {
   assertPromise.ok(Q(1)).done(done)
 })
 
-it('assert.oek passing promise', function(done) {
+it('assert() passing promise', function(done) {
   assertPromise(Q(1)).done(done)
 })
 
