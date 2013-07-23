@@ -37,4 +37,17 @@ it('assert passing mocha-as-promised', function() {
       return assertPromise.notStrictEqual(Q(true).delay(50), 1)
     })
 })
+
+it('assert nested promises as mocha', function(done) {
+  var nestedPromise = promise([promise(1), promise(2)])
+  return assertPromise(nestedPromise).then(function(arr) {
+      assert.equal(arr.length, 2)
+      return arr
+    }).then(function(arr) {
+      return Q.all([
+        assertPromise.equal(arr[0], 1),
+        assertPromise.equal(arr[1], 2)
+      ])
+    })
+})
 ```

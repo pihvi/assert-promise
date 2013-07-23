@@ -4,7 +4,7 @@
   "keywords": ["assert", "promise"],
   "author": "Antti Mattila <pihvi@live.com>",
   "repository": "git://github.com/pihvi/assert-promise",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "main": "./lib/assert-promise.js",
   "license": "Apache 2.0",
   "dependencies": {
