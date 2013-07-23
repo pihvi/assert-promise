@@ -4,7 +4,8 @@ var assert = require('assert')
 var Q = require('q')
 
 it('fail assert on non promise', function(done) {
-  assertPromise.equal(3, 3).done(done)
+  assertPromise.equal(3, 3)
+    .then(function(){done()}, done)
 })
 
 it('fail basic promise', function(done) {
@@ -14,19 +15,23 @@ it('fail basic promise', function(done) {
 })
 
 it('fail assert promise with equal', function(done) {
-  assertPromise.equal(promise(2), 3).done(done)
+  assertPromise.equal(promise(2), 3)
+    .then(function(){done()}, done)
 })
 
 it('fail assert promise with notEqual', function(done) {
-  assertPromise.notEqual(promise(3), 3).done(done)
+  assertPromise.notEqual(promise(3), 3)
+    .then(function(){done()}, done)
 })
 
 it('fail assert promise', function(done) {
-  assertPromise(promise(false), "fail on false").done(done)
+  assertPromise(promise(false), 'fail on false')
+    .then(function(){done()}, done)
 })
 
 it('fail assert promise with message', function(done) {
-  assertPromise.equal(promise(2), 3, 'this should fail').done(done)
+  assertPromise.equal(promise(2), 3, 'this should fail')
+    .then(function(){done()}, done)
 })
 
 it('fail assert promise with own assert function', function(done) {
