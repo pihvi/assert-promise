@@ -1,6 +1,8 @@
 Has all the functions from Node's assert, where the first param is a promise containing the actual value.
 
 ## Usage ##
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/pihvi/assert-promise.svg)](https://greenkeeper.io/)
 ```javascript
 var assertPromise = require('assert-promise')
 
