@@ -10,9 +10,9 @@
   "dependencies": {
   },
   "devDependencies": {
-    "mocha": "1.10.0",
-    "mocha-as-promised": "1.4.0",
-    "q": "0.9.6"
+    "mocha": "3.5.0",
+    "mocha-as-promised": "2.0.0",
+    "q": "1.5.0"
   },
   "scripts": {
     "start": "mocha test/example-passing-tests.js",
